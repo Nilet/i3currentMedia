@@ -4,7 +4,7 @@
 Screenshot of the script working with SoundCloud
 
 ### About:
-i3currentMedia is a fork from [@rpieja i3spotifystatus](https://github.com/rpieja/i3spotifystatus) which i recommend to check it out, that uses `playerctl` to get the current media playing from any source, not only spotify, made for myself but it might be what someone else wants.
+i3currentMedia is a fork from [@rpieja's i3spotifystatus](https://github.com/rpieja/i3spotifystatus) which i recommend to check it out, that uses `playerctl` to get the current media playing from any source, not only spotify, made for myself but it might be what someone else wants.
 
 i3currentMedia is a tiny python script that parses JSON outputed by i3status, adds information about song author and title and outputs it to i3bar.
 
@@ -42,4 +42,6 @@ Tip: If you are not sure how this whole thing works, you can comment your config
 
 ### Credits:
 Almost everything made by [@rpieja](https://github.com/rpieja/) i just modified some parts
+
+
 Script is based on sample wrapper commited on original i3status repository.
