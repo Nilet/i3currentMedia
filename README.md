@@ -1,6 +1,7 @@
 # i3currentMedia
 
 ![screen](./res/soundcloud_scr.png)
+Screenshot of the script working with SoundCloud
 
 ### About:
 i3currentMedia is a fork from [@rpieja i3spotifystatus](https://github.com/rpieja/i3spotifystatus) which i recommend to check it out, that uses `playerctl` to get the current media playing from any source, not only spotify, made for myself but it might be what someone else wants.
