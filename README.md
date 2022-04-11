@@ -9,9 +9,9 @@ i3currentMedia is a fork from [@rpieja's i3spotifystatus](https://github.com/rpi
 i3currentMedia is a tiny python script that parses JSON outputed by i3status, adds information about song author and title and outputs it to i3bar.
 
 ### What you'll need:
-* playerctl
-	if you are on an Arch based distro you can get it with:
+- **playerctl** if you are on an Arch based distro you can get it with:
 	`sudo pacman -S playerctl`
+- **python** which you problably already have 
 
 ### How to install:
 
@@ -45,3 +45,4 @@ Almost everything made by [@rpieja](https://github.com/rpieja/) i just modified 
 
 
 Script is based on sample wrapper commited on original i3status repository.
+

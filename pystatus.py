@@ -13,10 +13,15 @@ if sys.version_info[0] == 2:
 dir_path=os.path.dirname(os.path.realpath(__file__))
 
 
-def get_status():
-    status = subprocess.check_output("playerctl metadata --format \"{{status}}\"", shell=True)
-    status=status.decode('utf-8')
-    return status
+def isPlaying():
+    try:
+        status = subprocess.check_output("playerctl metadata --format \"{{status}}\"", shell=True)
+        status=status.decode('utf-8')
+        if 'Playing' in status:
+            return True
+    except subprocess.CalledProcessError:
+        return False
+
 
 def get_artist():
     artist = subprocess.check_output("playerctl metadata --format \"{{artist}}\"", shell=True)
@@ -66,14 +71,12 @@ if __name__ == '__main__':
         # ignore comma at start of lines
         if line.startswith(','):
             line, prefix = line[1:], ','
-        if get_status() in ['Playing\n']:
-            j = json.loads(line)
+        j = json.loads(line)
+        if isPlaying() :
+            
             # insert information into the start of the json, but could be anywhere
             # CHANGE THIS LINE TO INSERT SOMETHING ELSE
-            j.insert(0, {'color' : '#9ec600', 'full_text' : '♪ %s - %s' % (get_artist(), get_song()) , 'name' : 'spotify'})
-            # and echo back new encoded json
-            print_line(prefix+json.dumps(j))
-        else:
-            j = json.loads(line)
-            print_line(prefix+json.dumps(j))
-            #print_line(json.dumps(j))
+            j.insert(0, {'color' : '#9ec600', 'full_text' : '♪ %s - %s' % (get_artist(), get_song()) })
+        
+        # and echo back new encoded json
+        print_line(prefix+json.dumps(j))
